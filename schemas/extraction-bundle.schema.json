@@ -1,0 +1,334 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://frontend-distill.dev/schemas/extraction-bundle.schema.json",
+  "title": "Frontend Distill Extraction Bundle",
+  "description": "A normalized bundle for visual, component, layout, and responsive evidence extracted from a rendered website.",
+  "type": "object",
+  "required": [
+    "meta",
+    "summary",
+    "visualTokens",
+    "componentSystem",
+    "layoutSystem",
+    "responsiveSystem"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["version", "url", "title", "extractedAt"],
+      "properties": {
+        "version": { "type": "string" },
+        "url": { "type": "string" },
+        "title": { "type": "string" },
+        "extractedAt": { "type": "string" },
+        "viewport": {
+          "type": "object",
+          "properties": {
+            "width": { "type": "number" },
+            "height": { "type": "number" }
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "dominantColors": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "fontFamilies": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "primaryLayoutType": { "type": "string" },
+        "contentDensity": { "type": "string" },
+        "breakpointProfiles": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "visualTokens": {
+      "type": "object",
+      "properties": {
+        "colors": {
+          "type": "object",
+          "properties": {
+            "text": { "$ref": "#/$defs/colorList" },
+            "background": { "$ref": "#/$defs/colorList" },
+            "border": { "$ref": "#/$defs/colorList" },
+            "dominant": { "$ref": "#/$defs/colorList" }
+          }
+        },
+        "typography": {
+          "type": "object",
+          "properties": {
+            "fonts": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "hierarchy": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/typeLevel" }
+            }
+          }
+        },
+        "spacingScale": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "radiusScale": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "shadows": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "borders": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "decorativeEffects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string" },
+              "value": { "type": "string" },
+              "usage": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "componentSystem": {
+      "type": "object",
+      "properties": {
+        "buttons": { "$ref": "#/$defs/componentFamily" },
+        "cards": { "$ref": "#/$defs/componentFamily" },
+        "inputs": { "$ref": "#/$defs/componentFamily" },
+        "navigation": { "$ref": "#/$defs/componentFamily" },
+        "badges": { "$ref": "#/$defs/componentFamily" },
+        "modals": { "$ref": "#/$defs/componentFamily" },
+        "dropdowns": { "$ref": "#/$defs/componentFamily" },
+        "tabs": { "$ref": "#/$defs/componentFamily" }
+      }
+    },
+    "layoutSystem": {
+      "type": "object",
+      "properties": {
+        "pageArchitecture": {
+          "type": "object",
+          "properties": {
+            "surfaceType": { "type": "string" },
+            "heroPattern": { "type": "string" },
+            "navPlacement": { "type": "string" },
+            "footerDensity": { "type": "string" }
+          }
+        },
+        "containers": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/containerSpec" }
+        },
+        "grids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/gridSpec" }
+        },
+        "sectionRhythm": {
+          "type": "object",
+          "properties": {
+            "sectionGapY": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "headingToBody": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "bodyToCta": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "cardGap": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "readingWidths": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "placementRules": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "pagePatterns": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/pagePattern" }
+        }
+      }
+    },
+    "responsiveSystem": {
+      "type": "object",
+      "properties": {
+        "breakpoints": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/breakpointSpec" }
+        },
+        "viewportSnapshots": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/viewportSnapshot" }
+        },
+        "collapseRules": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "cssVariables": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "pseudoStates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "selector": { "type": "string" },
+              "properties": {
+                "type": "object",
+                "additionalProperties": { "type": "string" }
+              }
+            }
+          }
+        },
+        "mediaQueries": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "keyframes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "colorList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hex": { "type": "string" },
+          "count": { "type": "number" },
+          "role": { "type": "string" }
+        }
+      }
+    },
+    "typeLevel": {
+      "type": "object",
+      "properties": {
+        "role": { "type": "string" },
+        "fontFamily": { "type": "string" },
+        "fontSize": { "type": "string" },
+        "fontWeight": { "type": "string" },
+        "lineHeight": { "type": "string" },
+        "letterSpacing": { "type": "string" },
+        "textTransform": { "type": "string" },
+        "fontFeatureSettings": { "type": "string" }
+      }
+    },
+    "componentFamily": {
+      "type": "object",
+      "properties": {
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "count": { "type": "number" },
+              "signature": {
+                "type": "object",
+                "additionalProperties": { "type": "string" }
+              },
+              "states": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "additionalProperties": { "type": "string" }
+                }
+              },
+              "samples": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "containerSpec": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "maxWidth": { "type": "string" },
+        "paddingInline": { "type": "string" },
+        "usage": { "type": "string" }
+      }
+    },
+    "gridSpec": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "columns": { "type": "string" },
+        "gap": { "type": "string" },
+        "usage": { "type": "string" }
+      }
+    },
+    "pagePattern": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "structure": { "type": "string" },
+        "usage": { "type": "string" }
+      }
+    },
+    "breakpointSpec": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "minWidth": { "type": "number" },
+        "maxWidth": { "type": "number" },
+        "notes": { "type": "string" }
+      }
+    },
+    "viewportSnapshot": {
+      "type": "object",
+      "properties": {
+        "viewport": { "type": "string" },
+        "navBehavior": { "type": "string" },
+        "heroBehavior": { "type": "string" },
+        "gridBehavior": { "type": "string" },
+        "spacingCompression": { "type": "string" },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

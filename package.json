@@ -1,0 +1,14 @@
+{
+  "name": "frontend-distill",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Skill and extraction toolkit for distilling website design, layout, and responsive behavior into AI-readable outputs.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "bundle:normalize": "node ./tools/normalize-extraction-bundle.mjs",
+    "bundle:validate": "node ./tools/validate-extraction-bundle.mjs",
+    "bundle:split": "node ./tools/split-extraction-bundle.mjs",
+    "skill:install": "node ./tools/install-skill.mjs"
+  }
+}
