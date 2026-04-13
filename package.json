@@ -1,11 +1,11 @@
 {
   "name": "frontend-distill",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "CLI, skill, and extraction toolkit for distilling website design, layout, and responsive behavior into AI-readable outputs.",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "frontend-distill": "./bin/frontend-distill.mjs"
+    "frontend-distill": "bin/frontend-distill.js"
   },
   "files": [
     "bin/",
@@ -49,7 +49,7 @@
     "node": ">=18.18"
   },
   "scripts": {
-    "frontend-distill": "node ./bin/frontend-distill.mjs",
+    "frontend-distill": "node ./bin/frontend-distill.js",
     "site:distill": "node ./tools/browser/distill-site.mjs",
     "bundle:normalize": "node ./tools/normalize-extraction-bundle.mjs",
     "bundle:validate": "node ./tools/validate-extraction-bundle.mjs",
