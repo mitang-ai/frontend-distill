@@ -14,9 +14,9 @@
   <p>
     Other Languages / Otros idiomas:
     <a href="./README.md">简体中文</a> ·
-    <a href="./README.en.md">English</a> ·
-    <a href="./README.ja.md">日本語</a> ·
-    <a href="./README.ko.md">한국어</a>
+    <a href="./README_EN.md">English</a> ·
+    <a href="./README_JA.md">日本語</a> ·
+    <a href="./README_KO.md">한국어</a>
   </p>
 </div>
 
