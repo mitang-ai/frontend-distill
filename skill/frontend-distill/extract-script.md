@@ -6,7 +6,7 @@ This file is the skill-facing entry point for the browser extractor.
 
 The single source of truth for the extractor is:
 
-- [`脚本与提示词/extract_design_tokens.js`](../../脚本与提示词/extract_design_tokens.js)
+- [`tools/browser/extract_design_tokens.js`](../../tools/browser/extract_design_tokens.js)
 
 Do not maintain a second inline copy here. The skill and the repository should always reference the same JavaScript file.
 
@@ -38,7 +38,7 @@ The extractor is stronger than the earlier prototype, but it still has limits:
 2. Scroll through the important pages or sections so lazy-loaded content enters the DOM.
 3. Open DevTools and switch to `Console`.
 4. If Chrome blocks paste, type `allow pasting` and press Enter.
-5. Paste the full contents of [`脚本与提示词/extract_design_tokens.js`](../../脚本与提示词/extract_design_tokens.js) and run it.
+5. Paste the full contents of [`tools/browser/extract_design_tokens.js`](../../tools/browser/extract_design_tokens.js) and run it.
 6. Copy the resulting JSON and feed it into the Frontend Distill toolchain.
 
 ## Skill Guidance

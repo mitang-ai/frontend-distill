@@ -1,8 +1,9 @@
 <div align="center">
   <h1>Frontend Distill</h1>
+  <h2>Distill websites into reusable AI frontend systems</h2>
   <h3>frontend-distillation skill</h3>
-  <p>If you are going to reuse a website, why reuse only its colors?</p>
-  <p>Distill the full frontend system of any website: visual language, component patterns, page structure, and responsive behavior.</p>
+  <p>Not just colors. Structure too.</p>
+  <p>Turn real websites into reusable AI-ready frontend assets by distilling their visual language, layout rules, and responsive behavior.</p>
 
   <p>
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
@@ -22,7 +23,7 @@
 
 `Frontend Distill` is an open-source frontend-distillation skill + toolchain for turning real websites into reusable AI-ready frontend assets.
 
-It is not only about extracting colors, typography, and buttons. It is built to distill three layers together:
+It is not only about extracting colors, typography, and button styles. It is built to distill three layers together:
 
 - visual design
 - layout structure
@@ -30,7 +31,7 @@ It is not only about extracting colors, typography, and buttons. It is built to 
 
 That is the difference between UI that only looks similar and UI that is also structurally plausible.
 
-This README's presentation style was inspired by Hua Shu's project storytelling style, then rewritten for the goals of this project.
+This README's presentation style was inspired by Hua Shu's project storytelling style, but the title language, messaging, and structure were rewritten specifically for this project.
 
 ---
 
@@ -84,7 +85,7 @@ Install the skill into your local skill directory:
 npm run skill:install -- --target "C:\\Users\\your-name\\.claude\\skills"
 ```
 
-If your agent can load a skill directly from the repository, you can also use:
+If your agent can load the skill directly from this repository, you can also use:
 
 - [`skill/frontend-distill`](./skill/frontend-distill)
 
@@ -92,7 +93,7 @@ If your agent can load a skill directly from the repository, you can also use:
 
 Open the target website in a browser and run:
 
-- [`脚本与提示词/extract_design_tokens.js`](./脚本与提示词/extract_design_tokens.js)
+- [`tools/browser/extract_design_tokens.js`](./tools/browser/extract_design_tokens.js)
 
 Then pass the extracted JSON through the toolchain:
 
@@ -167,21 +168,20 @@ frontend-distill/
 ├── skill/
 │   └── frontend-distill/
 ├── tools/
+│   └── browser/
 ├── schemas/
 ├── docs/
 ├── examples/
-├── 脚本与提示词/
 ├── package.json
 ├── .gitignore
 └── LICENSE
 ```
 
-## Internal Docs
+## Public Docs
 
 - Architecture: [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)
 - Roadmap: [`docs/ROADMAP.md`](./docs/ROADMAP.md)
 - Upstream analysis: [`docs/UPSTREAM_ANALYSIS.md`](./docs/UPSTREAM_ANALYSIS.md)
-- Next-stage enhancement tasks: [`脚本与提示词/下阶段增强任务.md`](./脚本与提示词/下阶段增强任务.md)
 
 ## License
 

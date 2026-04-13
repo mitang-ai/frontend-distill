@@ -1,8 +1,9 @@
 <div align="center">
   <h1>Frontend Distill</h1>
+  <h2>把网站前端，蒸馏成 AI 可复用系统</h2>
   <h3>前端蒸馏.skill</h3>
-  <p>你想复用的网站，何必只复用颜色。</p>
-  <p>蒸馏任何网站的前端系统：视觉风格、组件规律、页面结构、响应式行为。</p>
+  <p>不只提取颜色，更提取结构。</p>
+  <p>把真实网站的视觉、布局、响应式行为，整理成 AI 能稳定复用的前端资产。</p>
 
   <p>
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
@@ -29,7 +30,7 @@
 
 这样，AI 不只是“做得像”，还更有机会“排得对”。
 
-本 README 的写作组织方式参考了花叔的项目表达风格，并结合当前项目做了重写。
+本 README 的写作组织方式参考了花叔的项目表达风格，但标题表达、项目叙事与内容组织已经按当前项目重新设计。
 
 ---
 
@@ -94,7 +95,7 @@ npm run skill:install -- --target "C:\\Users\\你的用户名\\.claude\\skills"
 
 浏览器里打开目标网站后，在控制台运行：
 
-- [`脚本与提示词/extract_design_tokens.js`](./脚本与提示词/extract_design_tokens.js)
+- [`tools/browser/extract_design_tokens.js`](./tools/browser/extract_design_tokens.js)
 
 把得到的 JSON 丢给工具链：
 
@@ -174,6 +175,8 @@ frontend-distill/
 │       ├── layout-reference.md
 │       └── skill-output-template.md
 ├── tools/
+│   ├── browser/
+│   │   └── extract_design_tokens.js
 │   ├── install-skill.mjs
 │   ├── normalize-extraction-bundle.mjs
 │   ├── split-extraction-bundle.mjs
@@ -188,23 +191,16 @@ frontend-distill/
 │   └── UPSTREAM_ANALYSIS.md
 ├── examples/
 │   └── sample-raw-extraction.json
-├── 脚本与提示词/
-│   ├── extract_design_tokens.js
-│   ├── design_prompt.md
-│   └── 下阶段增强任务.md
 ├── package.json
 ├── .gitignore
 └── LICENSE
 ```
 
-## 内部文档
-
-如果你想了解后续还要增强什么：
+## 公开文档
 
 - 架构: [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)
 - 路线图: [`docs/ROADMAP.md`](./docs/ROADMAP.md)
 - 上游分析: [`docs/UPSTREAM_ANALYSIS.md`](./docs/UPSTREAM_ANALYSIS.md)
-- 脚本增强任务: [`脚本与提示词/下阶段增强任务.md`](./脚本与提示词/下阶段增强任务.md)
 
 ## 许可证
 
