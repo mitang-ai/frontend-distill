@@ -103,10 +103,18 @@ npx playwright install chromium
 
 其中 `playwright` 用于自动访问目标网站，`npx playwright install chromium` 用于安装实际浏览器运行时。
 
+作为 CLI 使用时，也可以直接运行：
+
+```bash
+node ./bin/frontend-distill.mjs help
+node ./bin/frontend-distill.mjs distill --url "https://example.com" --output-dir "./output/example"
+```
+
 把 skill 安装到本地 skills 目录：
 
 ```bash
 npm run skill:install -- --target "C:\\Users\\你的用户名\\.claude\\skills"
+node ./bin/frontend-distill.mjs install --target "C:\\Users\\你的用户名\\.claude\\skills"
 ```
 
 安装后会在 skill 目录里额外生成一个 `RUNTIME.md`，里面记录当前项目的实际工具路径，供 agent 在已安装 skill 模式下直接调用。
@@ -242,6 +250,11 @@ frontend-distill/
 - 架构: [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)
 - 路线图: [`docs/ROADMAP.md`](./docs/ROADMAP.md)
 - 上游分析: [`docs/UPSTREAM_ANALYSIS.md`](./docs/UPSTREAM_ANALYSIS.md)
+
+## Contributors
+
+- `mitang-ai`
+- `Codex`
 
 ## 许可证
 

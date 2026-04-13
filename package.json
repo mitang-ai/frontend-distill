@@ -1,11 +1,55 @@
 {
   "name": "frontend-distill",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Skill and extraction toolkit for distilling website design, layout, and responsive behavior into AI-readable outputs.",
+  "version": "0.2.0",
+  "description": "CLI, skill, and extraction toolkit for distilling website design, layout, and responsive behavior into AI-readable outputs.",
   "license": "MIT",
   "type": "module",
+  "bin": {
+    "frontend-distill": "./bin/frontend-distill.mjs"
+  },
+  "files": [
+    "bin/",
+    "docs/",
+    "examples/",
+    "schemas/",
+    "skill/",
+    "tools/",
+    "LICENSE",
+    "README.md",
+    "README_EN.md",
+    "README_JA.md",
+    "README_KO.md",
+    "README_ES.md"
+  ],
+  "keywords": [
+    "ai",
+    "claude-code",
+    "cli",
+    "design-system",
+    "design-tokens",
+    "frontend",
+    "layout",
+    "playwright",
+    "responsive-design",
+    "skill"
+  ],
+  "homepage": "https://github.com/mitang-ai/frontend-distill#readme",
+  "bugs": {
+    "url": "https://github.com/mitang-ai/frontend-distill/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitang-ai/frontend-distill.git"
+  },
+  "author": "mitang-ai",
+  "contributors": [
+    "Codex"
+  ],
+  "engines": {
+    "node": ">=18.18"
+  },
   "scripts": {
+    "frontend-distill": "node ./bin/frontend-distill.mjs",
     "site:distill": "node ./tools/browser/distill-site.mjs",
     "bundle:normalize": "node ./tools/normalize-extraction-bundle.mjs",
     "bundle:validate": "node ./tools/validate-extraction-bundle.mjs",

@@ -103,10 +103,18 @@ npx playwright install chromium
 
 `playwright` powers the automated site visit, and `npx playwright install chromium` installs the browser runtime used by the extraction command.
 
+You can also use the repository as a CLI directly:
+
+```bash
+node ./bin/frontend-distill.mjs help
+node ./bin/frontend-distill.mjs distill --url "https://example.com" --output-dir "./output/example"
+```
+
 Install the skill into your local skills directory:
 
 ```bash
 npm run skill:install -- --target "C:\\Users\\your-name\\.claude\\skills"
+node ./bin/frontend-distill.mjs install --target "C:\\Users\\your-name\\.claude\\skills"
 ```
 
 The installer also writes a `RUNTIME.md` file into the installed skill directory so the agent can find the real tool paths from the cloned project.
@@ -242,6 +250,11 @@ frontend-distill/
 - Architecture: [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)
 - Roadmap: [`docs/ROADMAP.md`](./docs/ROADMAP.md)
 - Upstream analysis: [`docs/UPSTREAM_ANALYSIS.md`](./docs/UPSTREAM_ANALYSIS.md)
+
+## Contributors
+
+- `mitang-ai`
+- `Codex`
 
 ## License
 
