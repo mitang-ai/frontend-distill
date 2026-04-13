@@ -98,7 +98,10 @@ cd frontend-distill
 
 ```bash
 npm install
+npx playwright install chromium
 ```
+
+其中 `playwright` 用于自动访问目标网站，`npx playwright install chromium` 用于安装实际浏览器运行时。
 
 把 skill 安装到本地 skills 目录：
 
@@ -106,24 +109,44 @@ npm install
 npm run skill:install -- --target "C:\\Users\\你的用户名\\.claude\\skills"
 ```
 
+安装后会在 skill 目录里额外生成一个 `RUNTIME.md`，里面记录当前项目的实际工具路径，供 agent 在已安装 skill 模式下直接调用。
+
 如果你的 agent 支持直接从仓库路径加载 skill，也可以直接使用：
 
 - [`skill/frontend-distill`](./skill/frontend-distill)
 
 ## 使用流程
 
-1. 用具备网页访问能力的 agent 或浏览器打开目标网站。
-2. 在页面控制台运行 [`tools/browser/extract_design_tokens.js`](./tools/browser/extract_design_tokens.js)。
-3. 将原始 JSON 交给工具链进行标准化、校验与拆分。
-4. 把 bundle、tokens 和 Markdown 规范交给 `frontend-distill` skill 消费。
+1. 让 agent 或工具直接访问目标网站 URL。
+2. 运行自动提取命令，生成截图、raw extraction、bundle 和 tokens。
+3. 把输出结果交给 `frontend-distill` skill 消费。
 
-对应命令示例：
+主流程命令：
+
+```bash
+npm run site:distill -- --url "https://example.com" --output-dir "./output/example"
+```
+
+这条命令会自动：
+
+- 打开页面
+- 滚动页面触发懒加载内容
+- 注入提取脚本
+- 保存页面截图
+- 输出 `raw-extraction.json`
+- 输出 `extraction-bundle.json`
+- 输出 `design-tokens.json`
+- 输出 `layout-tokens.json`
+
+如果你已经有原始 JSON，也可以继续单独运行整理工具：
 
 ```bash
 npm run bundle:normalize -- --input ./examples/sample-raw-extraction.json --output ./output/extraction-bundle.json
 npm run bundle:validate -- --input ./output/extraction-bundle.json
 npm run bundle:split -- --input ./output/extraction-bundle.json --design-output ./output/design-tokens.json --layout-output ./output/layout-tokens.json
 ```
+
+手动在浏览器控制台粘贴 [`tools/browser/extract_design_tokens.js`](./tools/browser/extract_design_tokens.js) 现在只作为降级方案，不再是项目主流程。
 
 ## 它蒸馏哪些内容
 

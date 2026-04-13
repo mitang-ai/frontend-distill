@@ -15,13 +15,14 @@ The final goal is to reduce model guesswork. The agent should not have to improv
 
 The skill works best when you have:
 
-- a target URL or an already-open site
-- screenshots of key pages or states
-- extraction JSON from the companion script or toolchain
+- a target URL
+- browser automation capability
 - an output target:
   - `DESIGN.md`
   - `DESIGN.md` + `LAYOUT.md`
   - full bundle plus reusable style skill
+
+If the skill has been installed into a standalone skills directory, read `RUNTIME.md` first and use the tool paths listed there.
 
 ## Primary Deliverables
 
@@ -38,9 +39,24 @@ If the user only asks for part of the bundle, produce only that part.
 
 ### Stage 1. Acquire Evidence
 
-1. Use the extraction script or companion tooling to collect structured evidence from the rendered site.
-2. Ask for or capture screenshots for homepage, key inner pages, and important states.
+Default path:
+
+1. Use the automated site distill tool to open the target URL, scroll the page, inject the extractor, and write outputs to disk.
+2. Capture the generated screenshot and token files from that run.
 3. Prefer repeated patterns over one-off surfaces.
+
+Primary command:
+
+```bash
+npm run site:distill -- --url "https://example.com" --output-dir "./output/example"
+```
+
+Installed-skill mode:
+
+1. Open `RUNTIME.md`.
+2. Run the absolute `distill-site.mjs` path listed there.
+
+Manual console paste is fallback-only. Do not make it the primary workflow when browser automation is available.
 
 ### Stage 2. Validate Coverage
 
@@ -58,7 +74,7 @@ Before synthesis, verify that the payload can answer:
 - how it structures pages
 - how it behaves across viewport sizes
 
-If layout or responsive evidence is weak, do not quietly invent it. Mark the gap and request more evidence or reduce confidence.
+If layout or responsive evidence is weak, do not quietly invent it. Rerun the automated extractor at another viewport width or mark the gap explicitly.
 
 ### Stage 3. Produce The Visual System
 
@@ -112,10 +128,13 @@ If the user wants a reusable style skill:
 - Prefer normalized summaries over raw dumps when speaking to the user.
 - Keep reusable system rules separate from one-page content details.
 - If the site has both marketing and app surfaces, capture both and name the distinction.
+- Default to the automated URL-driven toolchain. Use the manual browser console script only as a fallback when direct browser automation is unavailable.
+- When the skill has been installed outside the project root, use the runtime paths recorded in `RUNTIME.md`.
 
 ## Companion Files
 
-- `extract-script.md`: current extraction script entry point
+- `RUNTIME.md`: generated runtime path map for installed-skill mode
+- `extract-script.md`: automated and fallback extraction entry points
 - `reference.md`: canonical `DESIGN.md` writing spec
 - `layout-reference.md`: canonical `LAYOUT.md` writing spec
 - `skill-output-template.md`: packaging template for reusable style skills

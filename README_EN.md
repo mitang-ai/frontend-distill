@@ -98,7 +98,10 @@ Install dependencies:
 
 ```bash
 npm install
+npx playwright install chromium
 ```
+
+`playwright` powers the automated site visit, and `npx playwright install chromium` installs the browser runtime used by the extraction command.
 
 Install the skill into your local skills directory:
 
@@ -106,24 +109,44 @@ Install the skill into your local skills directory:
 npm run skill:install -- --target "C:\\Users\\your-name\\.claude\\skills"
 ```
 
+The installer also writes a `RUNTIME.md` file into the installed skill directory so the agent can find the real tool paths from the cloned project.
+
 If your agent can load a skill directly from a repository path, you can also use:
 
 - [`skill/frontend-distill`](./skill/frontend-distill)
 
 ## Workflow
 
-1. Open the target site with a browser or an agent that has browser access.
-2. Run [`tools/browser/extract_design_tokens.js`](./tools/browser/extract_design_tokens.js) in the page console.
-3. Pass the raw JSON through the normalization, validation, and split tools.
-4. Feed the resulting bundle, tokens, and Markdown guides into the `frontend-distill` skill.
+1. Let the agent or tool open the target URL.
+2. Run the automated extraction command to generate the screenshot, raw extraction, bundle, and tokens.
+3. Feed those outputs into the `frontend-distill` skill.
 
-Example commands:
+Primary command:
+
+```bash
+npm run site:distill -- --url "https://example.com" --output-dir "./output/example"
+```
+
+This command automatically:
+
+- opens the page
+- scrolls to trigger lazy-loaded content
+- injects the extractor
+- saves a screenshot
+- writes `raw-extraction.json`
+- writes `extraction-bundle.json`
+- writes `design-tokens.json`
+- writes `layout-tokens.json`
+
+If you already have raw extraction JSON, you can still run the normalization tools separately:
 
 ```bash
 npm run bundle:normalize -- --input ./examples/sample-raw-extraction.json --output ./output/extraction-bundle.json
 npm run bundle:validate -- --input ./output/extraction-bundle.json
 npm run bundle:split -- --input ./output/extraction-bundle.json --design-output ./output/design-tokens.json --layout-output ./output/layout-tokens.json
 ```
+
+Manually pasting [`tools/browser/extract_design_tokens.js`](./tools/browser/extract_design_tokens.js) into DevTools is now fallback-only, not the primary workflow.
 
 ## What It Distills
 

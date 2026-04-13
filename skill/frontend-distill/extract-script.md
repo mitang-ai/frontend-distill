@@ -1,12 +1,40 @@
-# Frontend Distill - Browser Extraction Script
+# Frontend Distill - Extraction Entry Points
 
-This file is the skill-facing entry point for the browser extractor.
+This file is the skill-facing entry point for extraction.
+
+## Primary Automation Path
+
+The primary workflow is URL-driven automation, not manual console paste.
+
+Primary command from the project root:
+
+```bash
+npm run site:distill -- --url "https://example.com" --output-dir "./output/example"
+```
+
+This command:
+
+- opens the target URL in an automated browser
+- scrolls the page to surface lazy-loaded content
+- injects the browser extractor
+- saves a screenshot
+- writes:
+  - `raw-extraction.json`
+  - `extraction-bundle.json`
+  - `design-tokens.json`
+  - `layout-tokens.json`
+
+If the skill was installed into a separate skills directory, read `RUNTIME.md` and run the absolute `distill-site.mjs` path listed there.
 
 ## Canonical Source
 
-The single source of truth for the extractor is:
+The single source of truth for the raw browser extractor is:
 
 - [`tools/browser/extract_design_tokens.js`](../../tools/browser/extract_design_tokens.js)
+
+The automated URL runner is:
+
+- [`tools/browser/distill-site.mjs`](../../tools/browser/distill-site.mjs)
 
 Do not maintain a second inline copy here. The skill and the repository should always reference the same JavaScript file.
 
@@ -32,7 +60,9 @@ The extractor is stronger than the earlier prototype, but it still has limits:
 - some layout decisions are only observable after real page interaction
 - cross-origin stylesheets may partially block direct `cssRules` access
 
-## Operator Steps
+## Fallback Manual Steps
+
+Use these only when direct browser automation is unavailable:
 
 1. Open the target website in a Chromium-based browser.
 2. Scroll through the important pages or sections so lazy-loaded content enters the DOM.
@@ -47,4 +77,5 @@ When using this skill:
 
 1. Prefer the extracted `summary` for fast validation.
 2. Use the raw layout and responsive fields before falling back to inference.
-3. If the user needs stronger mobile and tablet evidence, request multiple extraction runs at different viewport widths.
+3. If the user needs stronger mobile and tablet evidence, rerun the automated extractor at different viewport widths.
+4. Prefer the automated runner whenever the agent can operate a browser by itself.

@@ -98,7 +98,10 @@ Instala las dependencias:
 
 ```bash
 npm install
+npx playwright install chromium
 ```
+
+`playwright` se usa para la visita automática al sitio, y `npx playwright install chromium` instala el navegador que ejecuta la extracción.
 
 Instala el skill en tu directorio local de skills:
 
@@ -112,10 +115,26 @@ Si tu agente puede cargar un skill directamente desde la ruta del repositorio, t
 
 ## Flujo de uso
 
-1. Abre el sitio objetivo con un navegador o con un agente que tenga acceso al navegador.
-2. Ejecuta [`tools/browser/extract_design_tokens.js`](./tools/browser/extract_design_tokens.js) en la consola de la página.
-3. Pasa el JSON bruto por las herramientas de normalización, validación y división.
-4. Entrega el bundle resultante, los tokens y las guías Markdown al skill `frontend-distill`.
+1. Deja que el agente o la herramienta abra directamente la URL objetivo.
+2. Ejecuta el comando de extracción automática para generar captura, raw extraction, bundle y tokens.
+3. Entrega esos resultados al skill `frontend-distill`.
+
+Comando principal:
+
+```bash
+npm run site:distill -- --url "https://example.com" --output-dir "./output/example"
+```
+
+Este comando automáticamente:
+
+- abre la página
+- hace scroll para activar contenido lazy-loaded
+- inyecta el extractor
+- guarda una captura de pantalla
+- escribe `raw-extraction.json`
+- escribe `extraction-bundle.json`
+- escribe `design-tokens.json`
+- escribe `layout-tokens.json`
 
 Comandos de ejemplo:
 
@@ -124,6 +143,8 @@ npm run bundle:normalize -- --input ./examples/sample-raw-extraction.json --outp
 npm run bundle:validate -- --input ./output/extraction-bundle.json
 npm run bundle:split -- --input ./output/extraction-bundle.json --design-output ./output/design-tokens.json --layout-output ./output/layout-tokens.json
 ```
+
+Pegar [`tools/browser/extract_design_tokens.js`](./tools/browser/extract_design_tokens.js) en DevTools ahora es solo un camino de respaldo.
 
 ## Qué destila
 

@@ -6,9 +6,13 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "site:distill": "node ./tools/browser/distill-site.mjs",
     "bundle:normalize": "node ./tools/normalize-extraction-bundle.mjs",
     "bundle:validate": "node ./tools/validate-extraction-bundle.mjs",
     "bundle:split": "node ./tools/split-extraction-bundle.mjs",
     "skill:install": "node ./tools/install-skill.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.50.0"
   }
 }
