@@ -1,33 +1,26 @@
 # Upstream Analysis
 
-This document explains what the upstream inspiration does well and where it stops.
+This document explains what the upstream inspiration does well and where its scope intentionally stops.
 
 ## Upstream Reviewed
 
-- `awesome-design-md`: a curated repository of `DESIGN.md` files inspired by popular websites
-- `getdesign.md`: a hosted catalog and installer flow for those `DESIGN.md` files
+- `awesome-design-md`: the broader `DESIGN.md` project around curated AI-readable design references
 - Google Stitch `DESIGN.md` concept: a Markdown-native design system document for AI
 
 ## What Upstream Does Well
 
-The upstream project is strong in four areas:
+The upstream direction is strong in four areas:
 
 - style inspiration
 - design-token articulation
 - agent-friendly Markdown packaging
 - quick adoption for vibe-matching UI work
 
-This is visible in its own positioning:
-
-- the GitHub repository describes itself as a "Curated collection of DESIGN.md files inspired by developer focused websites"
-- the website tells users to "Drop one into your project and let coding agents build matching UI"
-- individual design pages describe themselves as "a curated starting point" rather than official design systems
-
-That framing is useful and honest. It makes the product easy to understand.
+That framing is useful because it makes the product easy to understand: pick a design reference, drop it into a project, and let an agent imitate the visual system.
 
 ## Where Upstream Is Intentionally Weak
 
-The weakness is not that the upstream project is bad. The weakness is that it is optimized for a different job.
+The weakness is not poor execution. The weakness is scope.
 
 It is optimized for:
 
@@ -40,26 +33,17 @@ It is not optimized for:
 - how layouts should collapse across viewport sizes
 - how to constrain an LLM's page architecture decisions
 
-Even the `DESIGN.md` format emphasizes design system language such as:
-
-- visual theme
-- color palette
-- typography
-- component styling
-- layout principles
-- depth and elevation
-
-That is valuable, but "layout principles" are still principle-level. They are not a full structural contract.
+Even when the format includes layout guidance, that guidance is typically principle-level rather than structure-level.
 
 ## Practical Result
 
-When an LLM reads a style-heavy but structure-light guide, it tends to do this:
+When an LLM reads a style-heavy but structure-light guide, it tends to:
 
-- accurately copy colors and typography
+- copy colors and typography accurately
 - loosely match component styling
 - improvise page layout
 
-That is why style transfer can still lead to:
+That is why style transfer can still produce:
 
 - cramped desktop layouts
 - weak section rhythm
@@ -69,7 +53,7 @@ That is why style transfer can still lead to:
 
 ## Product Opportunity
 
-The opportunity for Frontend Distill is not to replace the upstream project.
+The opportunity for `Frontend Distill` is not to replace the upstream project.
 
 The opportunity is to add the missing layer:
 
@@ -92,6 +76,4 @@ That means this project should treat the following as first-class outputs:
 ## Sources
 
 - [awesome-design-md repository](https://github.com/VoltAgent/awesome-design-md)
-- [getdesign.md homepage](https://getdesign.md/)
-- [Example design page: Stripe](https://getdesign.md/stripe/design-md)
 - [Google Stitch DESIGN.md overview](https://stitch.withgoogle.com/docs/design-md/overview/)
