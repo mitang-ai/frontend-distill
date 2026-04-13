@@ -1,14 +1,23 @@
-# Frontend Distill
+<div align="center">
+  <h1>Frontend Distill</h1>
+  <h3>前端蒸馏.skill</h3>
+  <p>你想复用的网站，何必只复用颜色。</p>
+  <p>蒸馏任何网站的前端系统：视觉风格、组件规律、页面结构、响应式行为。</p>
 
-> 你想复用的网站，何必只复用颜色。
->
-> 蒸馏任何网站的前端系统: 视觉风格、组件规律、页面结构、响应式行为。
+  <p>
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
+    <img src="https://img.shields.io/badge/Claude%20Code-Skill-blue" alt="Claude Code Skill" />
+    <img src="https://img.shields.io/badge/Frontend-Distill-black" alt="Frontend Distill" />
+  </p>
 
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blue)
-![Frontend](https://img.shields.io/badge/Frontend-Distill-black)
-
-其他语言 / Other Languages: [English](./README.en.md) · 日本語 · 한국어 · Español
+  <p>
+    其他语言 / Other Languages:
+    <a href="./README.en.md">English</a> ·
+    <a href="./README.ja.md">日本語</a> ·
+    <a href="./README.ko.md">한국어</a> ·
+    <a href="./README.es.md">Español</a>
+  </p>
+</div>
 
 `Frontend Distill` 是一个开源的前端蒸馏.skill + 工具链，用来把真实网站蒸馏成 AI 可复用的前端资产。
 
@@ -21,8 +30,6 @@
 这样，AI 不只是“做得像”，还更有机会“排得对”。
 
 本 README 的写作组织方式参考了花叔的项目表达风格，并结合当前项目做了重写。
-
-看定位 · 安装 · 它蒸馏了什么 · 工作原理 · 仓库结构
 
 ---
 

@@ -1,14 +1,24 @@
-# Frontend Distill
+<div align="center">
+  <h1>Frontend Distill</h1>
+  <h3>frontend-distillation skill</h3>
+  <p>If you are going to reuse a website, why reuse only its colors?</p>
+  <p>Distill the full frontend system of any website: visual language, component patterns, page structure, and responsive behavior.</p>
 
-> If you are going to reuse a website, why reuse only its colors?
->
-> Distill the full frontend system of any website: visual language, component patterns, page structure, and responsive behavior.
+  <p>
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
+    <img src="https://img.shields.io/badge/Claude%20Code-Skill-blue" alt="Claude Code Skill" />
+    <img src="https://img.shields.io/badge/Frontend-Distill-black" alt="Frontend Distill" />
+  </p>
 
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blue)
-![Frontend](https://img.shields.io/badge/Frontend-Distill-black)
-
-Other Languages / 其他语言: 简体中文 · English · 日本語 · 한국어 · Español
+  <p>
+    Other Languages / 其他语言:
+    <a href="./README.md">简体中文</a> ·
+    <a href="./README.en.md">English</a> ·
+    <a href="./README.ja.md">日本語</a> ·
+    <a href="./README.ko.md">한국어</a> ·
+    <a href="./README.es.md">Español</a>
+  </p>
+</div>
 
 `Frontend Distill` is an open-source frontend-distillation skill + toolchain for turning real websites into reusable AI-ready frontend assets.
 
