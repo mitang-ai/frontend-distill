@@ -1,9 +1,9 @@
 <div align="center">
   <h1>Frontend Distill</h1>
-  <h2>Destila frontends web en activos de sistema reutilizables para IA</h2>
+  <h2>Organiza referencias frontend reutilizables a partir de sitios reales</h2>
   <h3>frontend-distill skill</h3>
-  <p>No extrae solo estilos: también estructura, ritmo y restricciones responsive.</p>
-  <p>Le entrega a la IA algo más útil que una referencia visual: un sistema que puede reutilizar.</p>
+  <p>Extrae estilo visual, layout, ritmo entre secciones y comportamiento responsive.</p>
+  <p>Genera DESIGN.md, LAYOUT.md y tokens estructurados listos para reutilizar.</p>
 
   <p>
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
@@ -20,10 +20,10 @@
   </p>
 </div>
 
-`Frontend Distill` es un skill + toolchain open source para convertir sitios web reales en activos frontend que una IA pueda reutilizar con más estabilidad.
+`Frontend Distill` es un skill + toolchain open source para extraer información visual, de layout y responsive de sitios web reales y convertirla en documentación y tokens reutilizables.
 
-No pretende ser un simple volcado de CSS, ni otro README de referencia visual.  
-Su objetivo es extraer restricciones reutilizables desde la superficie de un sitio y empaquetarlas en salidas más claras y más baratas de consumir para la IA.
+No pretende ser un simple volcado de CSS, ni otro README de escaparate visual.  
+El repositorio incluye scripts de extracción, herramientas de normalización y un skill para convertir evidencia dispersa de una página en un conjunto de referencias frontend reutilizable.
 
 El ritmo organizativo de este README está inspirado en la forma en que Hua Shu suele estructurar documentación open source, pero el título, la voz, el encuadre y la narrativa fueron reescritos específicamente para `Frontend Distill`.
 

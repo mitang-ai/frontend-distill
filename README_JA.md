@@ -1,9 +1,9 @@
 <div align="center">
   <h1>Frontend Distill</h1>
-  <h2>Web フロントエンドを AI が再利用しやすいシステム資産へ蒸留する</h2>
+  <h2>実在サイトから再利用しやすいフロントエンド資料を整理する</h2>
   <h3>frontend-distill skill</h3>
-  <p>見た目だけでなく、構造、リズム、レスポンシブ制約まで抽出します。</p>
-  <p>AI に渡すのは単なる雰囲気ではなく、再利用可能なフロントエンドの根拠です。</p>
+  <p>視覚スタイルに加えて、レイアウト、セクションのリズム、レスポンシブ情報も扱います。</p>
+  <p>再利用しやすい DESIGN.md、LAYOUT.md、構造化 tokens を出力します。</p>
 
   <p>
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
@@ -20,10 +20,10 @@
   </p>
 </div>
 
-`Frontend Distill` は、実在する Web サイトを AI が再利用しやすいフロントエンド資産へ変換するための、オープンソースの skill + toolchain です。
+`Frontend Distill` は、実在する Web サイトから視覚、レイアウト、レスポンシブ情報を抽出し、再利用しやすいドキュメントと tokens に整理するためのオープンソース skill + toolchain です。
 
-単なる CSS 値の収集や、見た目だけを真似るための README ではありません。  
-サイトの表層から、再利用可能な制約を取り出し、それを AI が扱いやすい形へ整理することが目的です。
+単なる CSS 値の一覧でも、見た目だけを並べた README でもありません。  
+抽出スクリプト、正規化ツール、skill を使って、断片的なページ情報を再利用向けのフロントエンド資料にまとめます。
 
 この README の構成リズムは Hua Shu の OSS ドキュメントの組み立て方から着想を得ていますが、タイトル、語り口、構成、表現は `Frontend Distill` 用に再設計しています。
 

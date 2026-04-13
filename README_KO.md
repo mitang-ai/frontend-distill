@@ -1,9 +1,9 @@
 <div align="center">
   <h1>Frontend Distill</h1>
-  <h2>웹 프론트엔드를 AI가 재사용할 수 있는 시스템 자산으로 증류합니다</h2>
+  <h2>실제 사이트에서 재사용 가능한 프론트엔드 자료를 정리합니다</h2>
   <h3>frontend-distill skill</h3>
-  <p>스타일만 추출하지 않습니다. 구조, 리듬, 반응형 제약까지 다룹니다.</p>
-  <p>AI에게 “어떻게 보여야 하는가”뿐 아니라 “어떻게 배치되고 접혀야 하는가”도 전달합니다.</p>
+  <p>시각 스타일과 함께 레이아웃, 섹션 리듬, 반응형 정보도 추출합니다.</p>
+  <p>재사용 가능한 DESIGN.md, LAYOUT.md, 구조화된 tokens를 출력합니다.</p>
 
   <p>
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
@@ -20,10 +20,10 @@
   </p>
 </div>
 
-`Frontend Distill`는 실제 웹사이트를 AI가 더 안정적으로 재사용할 수 있는 프론트엔드 자산으로 변환하기 위한 오픈소스 skill + toolchain입니다.
+`Frontend Distill`는 실제 웹사이트에서 시각, 레이아웃, 반응형 정보를 추출해 재사용 가능한 문서와 tokens로 정리하는 오픈소스 skill + toolchain입니다.
 
-이 프로젝트는 단순한 CSS 덤프도 아니고, 시각 레퍼런스용 README 하나를 더 만드는 작업도 아닙니다.  
-사이트의 표면에서 재사용 가능한 제약을 추출하고, 그것을 AI가 읽기 쉬운 형태로 다시 정리하는 것이 목적입니다.
+이 프로젝트는 단순한 CSS 덤프도 아니고, 보기 좋은 스타일 소개 문서만 만드는 작업도 아닙니다.  
+추출 스크립트, 정규화 도구, skill을 통해 흩어진 페이지 증거를 계속 활용할 수 있는 프론트엔드 자료로 묶어 줍니다.
 
 이 README의 구성 리듬은 Hua Shu의 오픈소스 문서 방식에서 영감을 받았지만, 제목, 어조, 설명 구조는 `Frontend Distill`에 맞게 새로 작성했습니다.
 

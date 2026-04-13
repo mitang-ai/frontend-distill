@@ -1,9 +1,9 @@
 <div align="center">
   <h1>Frontend Distill</h1>
-  <h2>把网页前端蒸馏成 AI 可复用的系统资产</h2>
+  <h2>从真实网站整理出可复用的前端设计资料</h2>
   <h3>前端蒸馏.skill</h3>
-  <p>不只提取样式，还提取结构、节奏与响应式约束。</p>
-  <p>让 AI 读到的不只是“长什么样”，还有“该怎么排、怎么收、怎么复用”。</p>
+  <p>提取视觉样式，也整理布局、区块节奏和响应式信息。</p>
+  <p>输出可继续使用的 DESIGN.md、LAYOUT.md 和结构化 tokens。</p>
 
   <p>
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
@@ -20,10 +20,10 @@
   </p>
 </div>
 
-`Frontend Distill` 是一个开源的前端蒸馏.skill + 工具链，用来把真实网站整理成 AI 更容易复用的前端系统资产。
+`Frontend Distill` 是一个开源的前端蒸馏.skill + 工具链，用来从真实网站提取视觉、布局和响应式信息，并整理成便于复用的文档与 tokens。
 
-它不是“抓一堆 CSS 值”，也不是“只做一个更花哨的 DESIGN.md”。  
-它的目标是把网站前端拆成可以复用的约束，再把这些约束重新组合成更适合 AI 消费的输出。
+它不是简单导出一份 CSS 明细，也不是只做一份风格展示文档。  
+仓库提供提取脚本、标准化工具和 skill，用来把零散的页面证据整理成一套可继续使用的前端资料。
 
 本 README 的组织方式参考了花叔常见的开源写法，但标题、节奏、项目表达与结构已经按 `Frontend Distill` 重新编排。
 
